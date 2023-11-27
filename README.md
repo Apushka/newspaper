@@ -1,4 +1,4 @@
-# Newspaper application
+# Приложение Newspaper (Django Rest Framework)
 
 http://81.163.29.113
 
