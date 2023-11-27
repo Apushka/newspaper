@@ -10,4 +10,4 @@ class HasCommentsPermissionOrReadOnly(permissions.BasePermission):
         if request.method in ('PUT', 'PATCH',):
             return obj.author == request.user
 
-        return request.user.is_staff or obj.new.author == request.user
+        return request.user.is_staff or obj.new.author == request.user or obj.author == request.user
