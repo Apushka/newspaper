@@ -12,15 +12,17 @@
     git clone https://github.com/Apushka/newspaper.git
 
     cd newspaper
+
+    Переименовать .env.example в .env и заполнить нужными данными
+    
+    Для генерации SECRET_KEY в консоли:
+    python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+
     pip install -r requirements.txt
 
-## Run the app
+## Запуск приложения
 
-    unicorn -p 7000
-
-## Run the tests
-
-    ./run-tests.sh
+     python3 manage.py runserver
 
 # REST API
 
