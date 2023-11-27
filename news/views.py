@@ -14,6 +14,7 @@ from news.serializers import NewSerializer
 class IndexView(TemplateView):
     template_name = 'newspaper/index.html'
 
+
 class NewModelViewSet(ModelViewSet):
     queryset = New.objects.all()
     serializer_class = NewSerializer
@@ -40,6 +41,10 @@ class LikeOrUnlikeAPIView(UpdateAPIView):
 
     def update(self, request, *args, **kwargs):
         new_id = kwargs.get('pk')
+        news = New.objects.filter(pk=new_id)
+
+        if not news.exists():
+            return Response({'new_id': 'Новость не найдена'}, status.HTTP_400_BAD_REQUEST)
 
         new, is_added = New.like_or_dislike(new_id, self.request.user)
         serializer = self.get_serializer(new)
@@ -47,5 +52,6 @@ class LikeOrUnlikeAPIView(UpdateAPIView):
         status_code = status.HTTP_201_CREATED if is_added else status.HTTP_200_OK
 
         return Response(serializer.data, status=status_code)
+
 
 
