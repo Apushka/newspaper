@@ -1,5 +1,7 @@
 # Newspaper application
 
+http://81.163.29.113
+
 ## Установка
 
     mkdir newspaper-app
@@ -28,8 +30,12 @@
 
     Эндпоинты
 
-## API Route
+## API Routes
 
+### Локально
+`http://127.0.0.1:8000/api`
+
+### Демо
 `http://81.163.29.113/api`
 
 ## Регистрация нового пользователя
