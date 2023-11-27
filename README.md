@@ -1,8 +1,18 @@
 # Newspaper application
 
-## Install
+## Установка
 
-    bundle install
+    mkdir newspaper-app
+
+    cd newspaper-app
+
+    python3 -m venv venv
+    source venv/bin/activate
+
+    git clone https://github.com/Apushka/newspaper.git
+
+    cd newspaper
+    pip install -r requirements.txt
 
 ## Run the app
 
